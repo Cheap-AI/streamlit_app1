@@ -1,8 +1,5 @@
 
-
-** Documentation ** 
-
-## Summary
+## 🔬 Summary
 
 Conv-NN had half the trained model size and double the model accuracy. With 60,000 training data, our Conv-NN achieved 95% accuracy while traditional Deep Learning Neural Network only achieved 45%. In Conv-NN, we learn the 'edges' and 'shapes' of the image by creating and running a filter through the image (we used a 3x3 pixel filter, or a kernal). Without such feature implementations, traditional Deep Learning models would permanently suffer from model deviations in many cases.
 
