@@ -11,7 +11,7 @@ def display_readme():
     st.markdown(readme_content, unsafe_allow_html=True)
 
 def main():
-    st.title('Deep Neural Network Object Classifier')
+    st.title('Deep-NN VS. Conv-NN for Image Classification')
     
     # Add sidebar for navigation
     st.sidebar.title("Navigation")
@@ -20,8 +20,8 @@ def main():
     if page == "Doc":
         display_readme()
     else:
-        st.write('**It can classify an image into 10 different objects**')
-        st.write('Upload any image to classify it into one of the 10 objects')
+        st.write('**Trained on 60,000 training data, you can observe the effectiveness of CNN on image classification task. The difference is fundamental as this architecture enables 2-D pattern searching (used 3x3 pixel slider in our case)**')
+        st.write('You can upload an image to compare the accuracy of the models. One Sequential model with Dense layers (Flatten the image sequence) and another with Conv2D layers.')
         
         file = st.file_uploader("Test with an Image", type=["jpg", "jpeg", "png"])
         if file:
@@ -51,7 +51,7 @@ def main():
                 ax1.set_yticklabels(cifar10_classes)
                 ax1.invert_yaxis()
                 ax1.set_xlabel('Probability')
-                ax1.set_title('Object Prediction (Dense Model)')
+                ax1.set_title('Deep-NN Prediction')
                 st.pyplot(fig1)
             
             with col2:
@@ -62,7 +62,7 @@ def main():
                 ax2.set_yticklabels(cifar10_classes)
                 ax2.invert_yaxis()
                 ax2.set_xlabel('Probability')
-                ax2.set_title('Conv Prediction')
+                ax2.set_title('Conv-NN Prediction')
                 st.pyplot(fig2)
 
             #predicted_class = cifar10_classes[np.argmax(prediction)]    
