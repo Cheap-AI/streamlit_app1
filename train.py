@@ -9,21 +9,31 @@ from tensorflow.keras.datasets import cifar10
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense
 from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.layers import Conv2D, MaxPooling2D
 
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
-print(X_train)
+
 X_train = X_train / 255
 X_test = X_test / 255
 
 y_train = to_categorical(y_train, 10)
 y_test = to_categorical(y_test, 10)
 
+# model = Sequential([
+#     Flatten(input_shape=(32, 32, 3)),
+#     Dense(1000, activation='relu'),
+#     Dense(10, activation='softmax')
+# ])
+
 model = Sequential([
-    Flatten(input_shape=(32, 32, 3)),
-    Dense(1000, activation='relu'),
+    Conv2D(32, (3,3), activation='relu', input_shape=(32,32,3)),
+    Conv2D(64, (3,3), activation='relu'),
+    MaxPooling2D(2,2),
+    Flatten(),
+    Dense(128, activation='relu'),
     Dense(10, activation='softmax')
 ])
 
 model.compile(loss='categorical_crossentropy',optimizer='adam', metrics=['accuracy'])
 model.fit(X_train, y_train, batch_size=64, epochs=10, validation_data=(X_test, y_test))
-model.save('cifar10_model.h5')
+model.save(model, 'cifar10_model2.h5')
