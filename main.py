@@ -15,9 +15,9 @@ def main():
     
     # Add sidebar for navigation
     st.sidebar.title("Navigation")
-    page = st.sidebar.selectbox("Choose a page", ["🏠 Home", "📖 About"])
+    page = st.sidebar.selectbox("Choose a page", ["Home", "Doc"])
     
-    if page == "📖 About":
+    if page == "Doc":
         display_readme()
     else:
         st.write('**Unleash the power of AI to recognize the world around you!**')
@@ -52,6 +52,11 @@ def main():
             #predicted_class = cifar10_classes[np.argmax(prediction)]    
         else:
             st.text('You have not uploaded an image yet')
+        
+        # Add README content below the model testing section
+        st.markdown("---")
+        st.markdown("## Documentation")
+        display_readme()
 
 if __name__ == "__main__":
     
