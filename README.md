@@ -1,7 +1,7 @@
 
 ## 🔬 Summary
 
-Conv-NN had half the trained model size and double the model accuracy. With 60,000 training data, our Conv-NN achieved 95% accuracy while traditional Deep Learning Neural Network only achieved 45%. In Conv-NN, we learn the 'edges' and 'shapes' of the image by creating and running a filter through the image (we used a 3x3 pixel filter, or a kernal). Without such feature implementations, traditional Deep Learning models would permanently suffer from model deviations in many cases.
+Conv-NN model took half the memory and double the accuracy. With 60,000 training data, our Conv-NN achieved 95% accuracy while traditional Deep Learning Neural Network only achieved 45%. In Conv-NN, we learn the 'edges' and 'shapes' of the image by creating and running a filter through the image (we used a 3x3 pixel filter, or a kernal). Without such feature implementations, traditional Deep Learning models would permanently suffer from model deviations in many cases.
 
 In 2025, in using LLM models we can sometimes heuristically experience the model is giving a low accuracy output against our original intentions. And yet, human communication is not perfect (We often only insinuate what our true intentions are. We barely speak those out of time contraint, etc. So LLM models do not know.) And LLM can only see our written input, so far at least.
 
